@@ -4,7 +4,13 @@ const { initDb } = require('./models/db');
 
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+app.use(cors({ 
+  origin: [
+    'http://localhost:5173',
+    'https://taskflow-frontend-lu8v.onrender.com'
+  ], 
+  credentials: true 
+}));
 app.use(express.json());
 
 // Routes
